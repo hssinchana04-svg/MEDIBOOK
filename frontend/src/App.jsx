@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import Chatbot from './components/Chatbot.jsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home.jsx'
@@ -13,10 +14,12 @@ import MyProfile from './pages/MyProfile.jsx'
 import MyAppointments from './pages/MyAppointments.jsx'
 import Appointment from './pages/Appointment.jsx'
 import NearbyDoctors from './pages/NearbyDoctors.jsx'
+import SymptomChecker from './pages/SymptomChecker.jsx'
+import PrescriptionScanner from './pages/PrescriptionScanner.jsx'
 
 const App = () => {
   return (
-    <div className='mx-4 sm:mx-[10%]'>
+    <div className='mx-4 sm:mx-[10%] relative min-h-screen pb-16'>
       <ToastContainer />
       <Navbar />
       <Routes>
@@ -30,8 +33,10 @@ const App = () => {
         <Route path='/my-appointments' element={<MyAppointments />} />
         <Route path='/appointment/:docId' element={<Appointment />} />
         <Route path='/nearby-doctors' element={<NearbyDoctors />} />
-        
+        <Route path='/symptom-checker' element={<SymptomChecker />} />
+        <Route path='/prescription-scanner' element={<PrescriptionScanner />} />
       </Routes>
+      <Chatbot />
       <Footer />
     </div>
   )

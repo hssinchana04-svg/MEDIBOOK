@@ -25,6 +25,8 @@ const Navbar = () => {
         <NavLink to='/'><li className='hover:text-blue-600'>HOME</li></NavLink>
         <NavLink to='/doctors'><li className='hover:text-blue-600'>ALL DOCTORS</li></NavLink>
         <NavLink to='/nearby-doctors'><li className='hover:text-blue-600'>NEARBY</li></NavLink>
+        <NavLink to='/symptom-checker'><li className='hover:text-blue-600'>SYMPTOM CHECKER</li></NavLink>
+        <NavLink to='/prescription-scanner'><li className='hover:text-blue-600'>PRESCRIPTION SCANNER</li></NavLink>
         <NavLink to='/about'><li className='hover:text-blue-600'>ABOUT</li></NavLink>
         <NavLink to='/contact'><li className='hover:text-blue-600'>CONTACT</li></NavLink>
       </ul>
