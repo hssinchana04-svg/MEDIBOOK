@@ -32,7 +32,7 @@ const SymptomChecker = () => {
       const { data } = await axios.post(
         `${backendUrl}/api/user/symptom-check`,
         { symptoms },
-        { headers: { token } }
+        { headers: { token }, timeout: 60000 }
       )
 
       if (data.success) {

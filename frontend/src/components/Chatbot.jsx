@@ -54,7 +54,7 @@ const Chatbot = () => {
       const { data } = await axios.post(`${backendUrl}/api/user/health-chat`, {
         message: userMessage.text,
         history: history
-      })
+      }, { timeout: 60000 })
 
       if (data.success) {
         setMessages(prev => [...prev, {

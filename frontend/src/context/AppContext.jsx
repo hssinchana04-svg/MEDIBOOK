@@ -11,6 +11,15 @@ const AppContextProvider = ({ children }) => {
     const [userData, setUserData] = useState(null)
     const [doctors, setDoctors] = useState([])
 
+    // Wake up the Render free-tier backend on app load to avoid cold start delays
+    const wakeUpBackend = async () => {
+        try {
+            await axios.get(`${backendUrl}/`)
+        } catch (_) {
+            // silently ignore — just a warmup ping
+        }
+    }
+
     const getDoctors = async () => {
         try {
             const { data } = await axios.get(`${backendUrl}/api/doctor/list`)
@@ -41,6 +50,7 @@ const AppContextProvider = ({ children }) => {
     }
 
     useEffect(() => {
+        wakeUpBackend()
         getDoctors()
     }, [])
 
